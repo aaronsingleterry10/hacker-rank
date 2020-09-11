@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counting Valleys</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+
+    // let steps = 12;
+    // let path = "DDUUDDUDUUUD";
+    let steps = 8;
+    let path = "UDDDUDUU";
+    let lvl = 0;
+    let valleys = 0;
+    for (let i = 0; i < steps; i++) {
+        if (path[i] === "U") {
+            lvl++;
+        } else {
+            lvl--;
+        }
+        if (lvl === 0 && path[i] === "U") {
+            valleys++;
+        }
+    }
+    // console.log(Math.abs(down / up));
+    // console.log("Downhill steps: " + down, "Uphill steps: " + up);
+    console.log("Valleys: " + (valleys));
+</script>
+</body>
+</html>
