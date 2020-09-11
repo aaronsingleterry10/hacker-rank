@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sock Merchant</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+
+    function sockMerchant(n, ar) {
+        let bucket = 0;
+        ar.sort();
+        for (let i = 0; i < n; i++) {
+            if (ar[i] === ar[i + 1]) {
+                i++;
+                bucket++;
+            }
+        }
+        return bucket;
+    }
+
+
+</script>
+</body>
+</html>
