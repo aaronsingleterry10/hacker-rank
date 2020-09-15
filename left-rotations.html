@@ -7,6 +7,15 @@
 <body>
 <script>
     "use strict";
+    let a = [1,2,3,4,5];
+    let d = 4;
+
+    for (let i = 0; i < d; i++) {
+        let num = a.shift();
+        a.push(num);
+    }
+
+    console.log(a);
 </script>
 </body>
 </html>
