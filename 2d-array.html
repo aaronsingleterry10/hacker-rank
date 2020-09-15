@@ -8,24 +8,39 @@
 
 <script>
     "use strict";
-    let arr = [[1, 1, 1, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [1, 1, 1, 0,0, 0],
-        [0, 0, 2, 4, 4, 0],
-        [0, 0, 0, 2, 0, 0],
-        [0, 0, 1, 2, 4, 0]];
+    // let arr = [[1, 1, 1, 0, 0, 0],
+    //     [0, 1, 0, 0, 0, 0],
+    //     [1, 1, 1, 0,0, 0],
+    //     [0, 0, 2, 4, 4, 0],
+    //     [0, 0, 0, 2, 0, 0],
+    //     [0, 0, 1, 2, 4, 0]];
+    let arr = [[0, -4, -6, 0, -7, -6],
+    [-1, -2, -6, -8, -3, -1],
+    [-8, -4, -2, -8, -8, -6],
+    [-3, -1, -2, -5, -7, -4],
+    [-3, -5, -3, -6, -6, -6],
+    [-3, -6, 0, -8, -6, -7]];
     let num = 0;
     let c = 0;
-    for (let i = 0; i <= arr.length + 10; i++) {
-        let x = arr[c][c] + arr[c][c + 1] + arr[c][c + 2] +
-                arr[c + 1][c + 1] +
-                arr[c + 2][c] + arr[c + 2][c + 1] + arr[c + 2][c + 2];
-        c++;
-        if (num < x) {
-            num = x;
+    let d = 0;
+    let nums = []
+    for (let i = 0; i < 16; i++) {
+        if (d === 4) {
+            d = 0;
+            c++;
         }
+        let x = arr[c][d] + arr[c][d + 1] + arr[c][d + 2] +
+                arr[c + 1][d + 1] +
+                arr[c + 2][d] + arr[c + 2][d + 1] + arr[c + 2][d + 2];
+        nums.push(x);
+        d++;
     }
-    console.log(num);
+        // console.log("x = " + x);
+        // if (num < x) {
+        //     num = x;
+        // }
+        // console.log(num)
+    console.log("final: " + Math.max(...nums));
 </script>
 </body>
 </html>
