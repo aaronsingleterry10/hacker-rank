@@ -8,7 +8,24 @@
 
 <script>
     "use strict";
-
+    let arr = [[1, 1, 1, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [1, 1, 1, 0,0, 0],
+        [0, 0, 2, 4, 4, 0],
+        [0, 0, 0, 2, 0, 0],
+        [0, 0, 1, 2, 4, 0]];
+    let num = 0;
+    let c = 0;
+    for (let i = 0; i <= arr.length + 10; i++) {
+        let x = arr[c][c] + arr[c][c + 1] + arr[c][c + 2] +
+                arr[c + 1][c + 1] +
+                arr[c + 2][c] + arr[c + 2][c + 1] + arr[c + 2][c + 2];
+        c++;
+        if (num < x) {
+            num = x;
+        }
+    }
+    console.log(num);
 </script>
 </body>
 </html>
